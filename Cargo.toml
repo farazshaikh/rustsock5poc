@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+"echo_server",
+"client_tokio_socks"
+]
