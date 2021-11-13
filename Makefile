@@ -9,3 +9,6 @@ debpackage:
 
 clean:
 	rm -rf ./release 
+
+buildenv:
+	sudo apt-get -y install dh-systemd
