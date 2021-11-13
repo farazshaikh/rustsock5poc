@@ -8,7 +8,9 @@ debpackage:
 	mv  python-socks-proxy_0.0.1_amd64.buildinfo  python-socks-proxy_0.0.1.dsc  python-socks-proxy_0.0.1_amd64.changes python-socks-proxy_0.0.1.tar.xz python-socks-proxy_0.0.1_amd64.deb release/
 
 clean:
-	rm -rf ./release 
+	rm -rf ./release
+	cd ./python-socks-proxy
+	dpkg-buildpackage -rfakeroot -Tclean
 
 buildenv:
 	sudo apt-get -y install dh-systemd
