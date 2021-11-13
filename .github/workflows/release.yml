@@ -21,7 +21,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Make
         run: | 
-                make buildenv 
+          make buildenv 
           make
       
       - name: Changelog
