@@ -1,4 +1,5 @@
-[Build](https://github.com/farazshaikh/socks5server/actions/workflows/makefile.yml/badge.svg)
+![Build](https://github.com/farazshaikh/socks5server/actions/workflows/makefile.yml/badge.svg)
+![Release](https://github.com/farazshaikh/socks5server/actions/workflows/release.yml/badge.svg)
 
 # transit component for BTC integration. 
 
