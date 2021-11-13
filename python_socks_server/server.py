@@ -13,8 +13,6 @@ class ThreadingTCPServer(ThreadingMixIn, TCPServer):
 
 
 class SocksProxy(StreamRequestHandler):
-    username = 'username'
-    password = 'password'
 
     def handle(self):
         logging.info('Accepting connection from %s:%s' % self.client_address)
@@ -32,18 +30,8 @@ class SocksProxy(StreamRequestHandler):
         methods = self.get_available_methods(nmethods)
         print("batch ", methods)
 
-        # accept only USERNAME/PASSWORD auth
-        # if 2 not in set(methods):
-        #    # close connection
-        #    print("Closing connection as auth method is not supported")
-        #    self.server.close_request(self.request)
-        #    return
-
         # send welcome message
         self.connection.sendall(struct.pack("!BB", SOCKS_VERSION, 0))
-
-        #if not self.verify_credentials():
-        #    return
 
         # request
         version, cmd, _, address_type = struct.unpack("!BBBB", self.connection.recv(4))
@@ -90,28 +78,6 @@ class SocksProxy(StreamRequestHandler):
         for i in range(n):
             methods.append(ord(self.connection.recv(1)))
         return methods
-
-    def verify_credentials(self):
-        version = ord(self.connection.recv(1))
-        assert version == 1
-
-        username_len = ord(self.connection.recv(1))
-        username = self.connection.recv(username_len).decode('utf-8')
-
-        password_len = ord(self.connection.recv(1))
-        password = self.connection.recv(password_len).decode('utf-8')
-
-        if username == self.username and password == self.password:
-            # success, status = 0
-            response = struct.pack("!BB", version, 0)
-            self.connection.sendall(response)
-            return True
-
-        # failure, status != 0
-        response = struct.pack("!BB", version, 0xFF)
-        self.connection.sendall(response)
-        self.server.close_request(self.request)
-        return False
 
     def generate_failed_reply(self, address_type, error_number):
         return struct.pack("!BBBBIH", SOCKS_VERSION, error_number, 0, address_type, 0, 0)
