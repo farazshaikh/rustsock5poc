@@ -23,7 +23,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Make
         run: | 
-          make devenv
+                make buildenv 
           make
       
       - name: Changelog
