@@ -1,3 +1,5 @@
+[Build](https://github.com/farazshaikh/socks5server/actions/workflows/makefile.yml/badge.svg)
+
 # transit component for BTC integration. 
 
 1. A simple python implementation of a SOCKS6 server that implments following minimal functionality
