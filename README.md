@@ -25,3 +25,9 @@ Steps to run.
 2. Run the server it listens on 3333
 
 3. Run the client it connects to python socks proxy and talks to the echo server
+
+
+Compiling Make targets
+make buildenv
+make 
+make clean
