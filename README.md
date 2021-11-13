@@ -28,6 +28,9 @@ Steps to run.
 
 
 Compiling Make targets
+
 make buildenv
+
 make 
+
 make clean
