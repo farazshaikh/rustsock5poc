@@ -1,4 +1,4 @@
-Source: dfinity-socks-01
+Source: python-socks-proxy
 Section: test
 Priority: optional
 Maintainer: Faraz <>
@@ -6,6 +6,6 @@ Build-Depends: debhelper (>=9.0.0),
                dh-systemd (>= 1.5)
 Standards-Version: 4.0.0
 
-Package: python-socks5-server
+Package: python-socks-proxy
 Architecture: any
 Description: SOCK5 proxy for boundary nodes.

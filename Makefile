@@ -1,7 +1,7 @@
 .ONESHELL: 
 .PHONY: debpackage
 debpackage:
-	cd ./dfinity-socks-01
+	cd ./python-socks-proxy
 	dpkg-buildpackage -us -uc
 	cd ..
 	mkdir -p ./release
