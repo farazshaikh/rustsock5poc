@@ -1,1 +1,1 @@
-debian/lib/systemd/system/server.py  lib/systemd/system
+debian/usr/bin/server.py  /usr/bin

@@ -9,7 +9,7 @@ After=syslog.target network.target
 [Service]
 User=root
 Group=root
-ExecStart=/usr/bin/python3 /lib/systemd/system/server.py
+ExecStart=/usr/bin/python3 /usr/bin/server.py
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
